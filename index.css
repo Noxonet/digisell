@@ -1,27 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+@import url('https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css');
+@import url('https://cdn.fontcdn.ir/Font/Persian/IRANSans/IRANSans.css');
+@import url('https://cdn.fontcdn.ir/Font/Persian/YekanBakh/YekanBakh.css');
+@import url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.css');
 
-* {
-  font-family: 'Vazirmatn', sans-serif;
-}
+.font-vazirmatn { font-family: 'Vazirmatn', sans-serif; }
+.font-Lalezar { font-family: 'Lalezar', sans-serif; }
+.font-IBM { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+.font-Rubik { font-family: 'Rubik', sans-serif; }
 
 body {
   direction: rtl;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
+  font-family: 'Vazirmatn', sans-serif;
+  background: linear-gradient(to bottom, #f9fafb, #ffffff);
+  color: #1f2937;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
+.animate-slide {
+  animation: slide 15s infinite;
 }
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+
+@keyframes slide {
+  0%, 33.33% { transform: translateX(0); }
+  33.34%, 66.66% { transform: translateX(-100%); }
+  66.67%, 100% { transform: translateX(-200%); }
 }
-::-webkit-scrollbar-thumb {
-  background: #c00;
-  border-radius: 4px;
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Improve scrolling on iOS */
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
 }
